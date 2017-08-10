@@ -4,9 +4,126 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
 </head>
 <body>
-	<h1>Rodrigo</h1>
+	<h1 class="title is-centered">Personas en el mundo</h1>
+	<h2 class="subtitle">busca a los seres que recuerdes..!!!</h2>
+	<div class="tabs is-centered">
+  <ul>
+    <li class="is-active"><a>Pictures</a></li>
+    <li><a>Music</a></li>
+    <li><a>Videos</a></li>
+    <li><a>Documents</a></li>
+  </ul>
+</div>
+<main>
+
+<!-- <div class="columns is-mobile">
+	
+	<div class="column">
+		<div class="field">
+			<div class="control">
+				<input type="text"  class="input is-large" placeholder="Ingrese su nombre">
+			</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="field">
+			<div class="control">
+				<input type="text"  class="input is-large" placeholder="Ingrese su nombre">
+			</div>
+		</div>
+	</div>
+</div> -->
+
+
+<div class="columns is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+  	<div class="field">
+  	
+  		
+  		<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Buscar......">
+    <span class="icon is-medium is-left">
+      <i class="fa fa-search"></i>
+    </span>
+   
+  </p>
+</div>
+  		
+  	</div>
+  	
+  	
+  
+  </div>
+</div>
+<div class="container is-mobile">
+  	
+  
+  
+<table class="table is-fullwidth">
+	
+	<thead>
+		<tr>
+			
+			<th>Image</th>
+			<th>Person</th>
+			<th>Email</th>
+			<th>City</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr v-for="per in persons">
+			<td><img :src="per.picture.medium"></td>
+			<td><strong>{{per.name.title}}</strong> {{per.name.first}} {{per.name.last}}</td>
+			<td>{{per.email}}</td>
+			<td>{{per.location.city}}</td>
+			<td>
+				<a href="#" class="button is-success" title="">Edit</a>
+			</td>
+
+		</tr>
+	</tbody>
+</table>
+</div>
+
+	 <pre>
+  	{{$data}}
+  </pre>
+</main>
+ 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+	<script>
+		 vm = new Vue({
+			el: "main",
+			data:
+			{
+				mesaje:"hola",
+				persons:[],
+			},
+			mounted()
+			{
+				this.cargarPersonas();
+			},
+			methods:{
+				cargarPersonas()
+				{
+					axios.get("https://randomuser.me/api/?results=50").then((respuesta)=>{
+					this.persons=respuesta.data.results;
+				});
+
+				}
+			}
+		
+			
+		})
+	</script>
 </body>
+
 </html>
