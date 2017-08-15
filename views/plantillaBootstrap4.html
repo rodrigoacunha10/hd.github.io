@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Componentes de bootstrap-4</title>
+
+	 <!-- css bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <style>
+  .background-dark{background:#293a46}
+  .text{color:#FFFFFF}
+  .textTitulos{color:#70BEEB}
+  .textSubtitulo{color:#1AE669}
+  	
+  </style>
+</head>
+<body class="background-dark">
+<div class="container">
+	  
+	         <h1 class="alert alert-info text-center">Componentes</h1>
+	         <!-- navegacion -->
+	    
+               <!-- Navbar content -->
+           				
+
+				<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+		  				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    				<span class="navbar-toggler-icon"></span>
+		 				</button>
+		 
+ 						 <a class="navbar-brand" href="#">Navbar</a>
+
+					  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+					    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+					      <li class="nav-item active">
+					        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="#">Link</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link disabled" href="#">Disabled</a>
+					      </li>
+					    </ul>
+					    <!-- formulario para buscar -->
+					    <form class="form-inline my-2 my-lg-0">
+					      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					    </form>
+					  </div>
+
+				</nav><hr><!-- fin de la navegacion -->
+
+			<div class="row">
+			<div class="col-md-4">
+			 <p class="textTitulos">botones y inputs</p><hr>
+			 		 <button class="btn btn-sm align-middle btn-outline-secondary" type="button">Smaller button</button>
+					<button type="button" class="btn btn-lg btn-pill btn-primary">Primary</button>
+					<button type="button" class="btn btn-lg btn-pill btn-secondary">Secondary</button>
+					<button type="button" class="btn btn-lg btn-pill btn-success">Success</button>
+					<button type="button" class="btn  btn-pill btn-info">Info</button>
+					<button type="button" class="btn btn-warning">Warning</button>
+					<button type="button" class="btn btn-xs btn-danger">Danger</button>
+					<button type="button" class="btn btn-lg btn-pill btn-link">Link</button>
+					<button type="button" class="btn btn-outline-primary">Primary</button>
+					<button type="button" class="btn btn-outline-secondary">Secondary</button>
+					<button type="button" class="btn btn-xs btn-outline-success">Success</button>
+					<button type="button" class="btn btn-outline-info">Info</button>
+					<button type="button" class="btn btn-outline-warning">Warning</button>
+					<button type="button" class="btn btn-outline-danger">Danger</button><hr>
+
+					<input type="text" class="form-control" placeholder="name">
+					<hr>
+					<div class="input-group input-group-lg">
+  					<span class="input-group-addon" id="sizing-addon1">@</span>
+  					<input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+					</div><br>
+				
+			</div>
+			<div class="col-md-4">
+			<p class="textSubtitulo">Label- checks,paneles</p><br>
+					<div class="form-group has-success">
+						  <label class="custom-control custom-checkbox">
+						    <input type="checkbox" class="custom-control-input">
+						    <span class="custom-control-indicator"></span>
+						    <span class="custom-control-description">Check this custom checkbox</span>
+						  </label>
+						</div>
+						<div class="form-group has-warning">
+						  <label class="custom-control custom-checkbox">
+						    <input type="checkbox" class="custom-control-input">
+						    <span class="custom-control-indicator"></span>
+						    <span class="custom-control-description">Check this custom checkbox</span>
+						  </label>
+						</div>
+						<div class="form-group has-danger mb-0">
+						  <label class="custom-control custom-checkbox">
+						    <input type="checkbox" class="custom-control-input">
+						    <span class="custom-control-indicator"></span>
+						    <span class="custom-control-description">Check this custom checkbox</span>
+						  </label>
+						  <p>radio button</p>
+						  <div class="custom-controls-stacked">
+								  <label class="custom-control custom-radio">
+								    <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+								    <span class="custom-control-indicator"></span>
+								    <span class="custom-control-description">Toggle this custom radio</span>
+								  </label>
+								  <label class="custom-control custom-radio">
+								    <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+								    <span class="custom-control-indicator"></span>
+								    <span class="custom-control-description">Or toggle this other custom radio</span>
+								  </label>
+						</div>
+			</div>
+				
+			</div>
+			<div class="col-md-4">
+
+			<p class="text">tabs-modals</p><hr>
+			<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel">.fgb..</div>
+  <div class="tab-pane" id="profile" role="tabpanel">...sdv</div>
+  <div class="tab-pane" id="messages" role="tabpanel">.efe..</div>
+  <div class="tab-pane" id="settings" role="tabpanel">.dfvdvbd..</div>
+</div>
+		<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- forms images		 -->
+<p>formas en la que se puede poner una imagen</p>
+<img src="http://www.ucm-mci.com/sites/default/files/docentes/fotos/sin_perfil_21.png" alt="..." class="rounded">
+<img src="http://www.ucm-mci.com/sites/default/files/docentes/fotos/sin_perfil_21.png" alt="..." class="rounded-top">
+<img src="http://www.ucm-mci.com/sites/default/files/docentes/fotos/sin_perfil_21.png" alt="..." class="rounded-right">
+
+<img src="http://www.ucm-mci.com/sites/default/files/docentes/fotos/sin_perfil_21.png" alt="..." class="rounded-circle">
+
+
+
+			</div>
+				
+			</div>
+</div>
+
+
+
+	 <!-- Include jQuery (required) and the JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body>
+</html>

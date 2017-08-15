@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	
+	<!-- css animaciones -->
+	<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  
+<!-- css materialize -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+<!--Import Google Icon y Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    
+
+    <style>
+      	
+      	.background-dark{background:#293a46}
+  input
+  {
+  	color:#FFFFFF
+  }
+  .text{
+  	color:#FFFFFF
+  }
+  body 
+  			{
+  			  display: flex;
+   			 min-height: 100vh;
+    		flex-direction: column;
+  				}
+
+  			main {
+    				flex: 1 0 auto;
+  				}
+
+      </style>  
+</head>
+
+
+
+<body class="background-dark">
+<!-- navegation -->
+
+  
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+<!-- fin de la barra de navegacion -->
+
+<!-- etiqueta para vue -->
+<main>
+ 
+
+
+<div class="container">
+      <router-link to="/platos">Platos</router-link>
+      <router-link to="/plato-disponible">Disponibles</router-link>
+      <router-link to="/nodispo">Contacto</router-link>
+      <router-view></router-view>
+
+<!-- <h1 class="animated rubberBand text">Animate</h1> -->
+	<hr>
+</div>
+	<!-- <div class="row"> -->
+   <!--  s12 significa cunado estara en moviles que use todo el ancho
+    m4 sifnifica cuando sea de tamano mediano
+    14 sifnifica cuando estara en laptos usa ignorando el uno por delante cosa que de 12 (14 14 14)= 12 -->
+		<!-- <div class="col s12 m4 14">
+			<h5 class="animated rubberBand text text">Componente:Platos</h5><hr>
+			<input type="text" class="form-control" v-model="buscar" placeholder="Buscar....">
+
+      <!-- <li v-for="com in filtrarBusqueda">
+        {{com.nombre}}
+      </li> -->
+      
+      
+   
+
+     
+
+		<!-- 	 <comidas  :comida="filtrarBusqueda"></comidas>
+
+		</div>
+		<div class="col s12 m4 14">
+    <h5 class="animated rubberBand text text">Componente:Disponibles</h5><hr>
+      
+		  <comida-disponible class="responsive" :dispo="comida"></comida-disponible>
+		</div>
+		<div class="col s12 m4 14">
+		
+			 <h5 class="animated rubberBand text text">Componente:No disponibles</h5><hr>
+      
+      <comida-no-disponible :nodispo="comida"></comida-no-disponible>
+    
+
+		</div>
+		
+	</div> -->
+
+	
+		
+			
+
+
+
+<pre>{{$data}}</pre>	
+</main><!-- fin de la instancia vue -->
+
+
+
+<template id="plato">
+  <div>
+       
+        <div class="input-field col s6">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" v-model="buscar" class="validate text">
+          <label for="icon_prefix">Buscar por nombre..!!!</label>
+        </div>
+       <!--  <ul class="collection" v-for="pla in buscarPlato">
+              <li class="collection-item avatar">
+              <img :src="pla.imagen" class="circle" height="100" width="100">
+              <span class="title"><font face="italic" color="red">{{pla.nombre}}</font></span>
+              <p>Precio:<strong>{{pla.precio}}Bs</strong></p><br>
+              <p v-if="pla.disponible==1">disponible</p>
+              <p v-if="pla.disponible==0">No disponible 
+              <button type="btn-primary">Habilitar</button>
+              </p>
+              </li>
+        </ul> --> 
+            <!-- compoente platos disponibles -->
+               <h1 class="text">Disponibles</h1>
+              <plato-disponible :plt="pla" v-for="pla in buscarPlato" v-if="pla.disponible==1"></plato-disponible>
+              
+              <!-- componente platos no disponibles -->
+              <h1 class="text">No disponibles</h1>
+              <plato-no-disponible :p="pl" v-for="pl in buscarPlato" v-if="pl.disponible==0"></plato-no-disponible>
+              
+
+
+         </div>
+</template>
+ 
+<!-- platos disponibles -->
+<template id="plato-disponible">
+<div>
+
+   <ul class="collection">
+        <li class="collection-item avatar">
+                  <img :src="plt.imagen" class="circle" height="100" width="100">
+                  <span class="title"><font face="italic" color="red">{{plt.nombre}}</font></span>
+                  <p>Precio:<strong>{{plt.precio}}Bs</strong></p><br>
+        </li>
+        
+     
+   </ul>
+
+    
+  </div> 
+</template>
+
+<!-- platos no disponibles -->
+
+<template id="nodisponible">
+  <ul class="collection">
+        <li class="collection-item avatar">
+                  <img :src="p.imagen" class="circle" height="100" width="100">
+                  <span class="title"><font face="italic" color="red">{{p.nombre}}</font></span>
+                  <p>Precio:<strong>{{p.precio}}Bs</strong></p><br>
+        </li>
+        
+     
+   </ul>
+
+</template>
+
+
+
+	 <!-- scripts necesarios para materialize -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+   <!--  // funciones materialize -->
+    <script src="./assets/js/function-materialize.js"> </script>
+
+
+     <!-- scripts vue -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+     <script src="./assets/js/home.js"> </script>
+
+</body>
+</html>
